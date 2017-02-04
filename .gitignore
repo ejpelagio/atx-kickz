@@ -1,2 +1,3 @@
 .DS_Store
 node_modules
+reactResources/material-ui-webpack-example/node_modules/
