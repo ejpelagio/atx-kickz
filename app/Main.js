@@ -1,84 +1,101 @@
-/**
- * In this file, we create a React component
- * which incorporates components provided by Material-UI.
- */
-import React, {Component} from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import Dialog from 'material-ui/Dialog';
-import {deepOrange500} from 'material-ui/styles/colors';
-import FlatButton from 'material-ui/FlatButton';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
+// Include React
+var React = require("react");
 
-const styles = {
-  container: {
-    textAlign: 'center',
-    paddingTop: 0,
-  },
-};
+// Here we include all of the sub-components
+var Form = require("./children/Form");
+var Results = require("./children/Results");
+var History = require("./children/History");
 
-const muiTheme = getMuiTheme({
-  palette: {
-    accent1Color: deepOrange500,
+// Helper for making AJAX requests to our API
+var helpers = require("./utils/helpers");
+
+// Creating the Main component
+var Main = React.createClass({
+
+  // Here we set a generic state associated with the number of clicks
+  // Note how we added in this history state variable
+  getInitialState: function() {
+    return { searchTerm: "", results: "", history: [] };
   },
+
+  // The moment the page renders get the History
+  componentDidMount: function() {
+    // Get the latest history.
+    helpers.getHistory().then(function(response) {
+      console.log(response);
+      if (response !== this.state.history) {
+        console.log("History", response.data);
+        this.setState({ history: response.data });
+      }
+    }.bind(this));
+  },
+
+  // If the component changes (i.e. if a search is entered)...
+  componentDidUpdate: function() {
+
+    // Run the query for the address
+    helpers.runQuery(this.state.searchTerm).then(function(data) {
+      if (data !== this.state.results) {
+        console.log("Address", data);
+        this.setState({ results: data });
+
+        // After we've received the result... then post the search term to our history.
+        helpers.postHistory(this.state.searchTerm).then(function() {
+          console.log("Updated!");
+
+          // After we've done the post... then get the updated history
+          helpers.getHistory().then(function(response) {
+            console.log("Current History", response.data);
+
+            console.log("History", response.data);
+
+            this.setState({ history: response.data });
+
+          }.bind(this));
+        }.bind(this));
+      }
+    }.bind(this));
+  },
+  // This function allows childrens to update the parent.
+  setTerm: function(term) {
+    this.setState({ searchTerm: term });
+  },
+  // Here we render the function
+  render: function() {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="jumbotron">
+            <h2 className="text-center">Address Finder!</h2>
+            <p className="text-center">
+              <em>Enter a landmark to search for its exact address (ex: "Eiffel Tower").</em>
+            </p>
+          </div>
+
+          <div className="col-md-6">
+
+            <Form setTerm={this.setTerm} />
+
+          </div>
+
+          <div className="col-md-6">
+
+            <Results address={this.state.results} />
+
+          </div>
+
+        </div>
+
+        <div className="row">
+
+          <History history={this.state.history} />
+
+        </div>
+
+      </div>
+    );
+  }
 });
 
-class Main extends Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      open: false,
-    };
-  }
-
-  handleRequestClose = () => {
-    this.setState({
-      open: false,
-    });
-  }
-
-  handleTouchTap = () => {
-    this.setState({
-      open: true,
-    });
-  }
-
-  render() {
-    const standardActions = (
-      <FlatButton
-        label="Ok"
-        primary={true}
-        onTouchTap={this.handleRequestClose}
-      />
-    );
-
-    return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <div style={styles.container}>
-        <AppBar title="ATXKicks" iconClassNameRight="muidocs-icon-navigation-expand-more"/>
-        
-          <Dialog
-            open={this.state.open}
-            title="Super Secret Password"
-            actions={standardActions}
-            onRequestClose={this.handleRequestClose}
-          >
-            1-2-3-4-5
-          </Dialog>
-          
-          <h1>Material-UI</h1>
-          <h2>example project</h2>
-          <RaisedButton
-            label="Super Secret Password"
-            secondary={true}
-            onTouchTap={this.handleTouchTap}
-          />
-        </div>
-      </MuiThemeProvider>
-    );
-  }
-}
-
-export default Main;
+// Export the component back for use in other files
+module.exports = Main;
