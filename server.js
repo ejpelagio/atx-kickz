@@ -5,7 +5,10 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // Require History Schema
-var History = require("./models/History");
+// var History = require("./models/History");
+
+// Require History Schema
+var shoes = require("./models/shoes");
 
 // Create Instance of Express
 var app = express();
@@ -44,7 +47,7 @@ app.get("/", function(req, res) {
 
 // This is the route we will send GET requests to retrieve our most recent search data.
 // We will call this route the moment our page gets rendered
-app.get("/api", function(req, res) {
+/*app.get("/api", function(req, res) {
 
   // We will find all the records, sort it in descending order, then limit the records to 5
   History.find({}).sort([
@@ -57,10 +60,25 @@ app.get("/api", function(req, res) {
       res.send(doc);
     }
   });
+});*/
+
+app.get("/models", function(req, res) {
+
+  // We will find all the records, sort it in descending order, then limit the records to 5
+  shoes.find({}).sort([
+    ["date", "descending"]
+  ]).limit(5).exec(function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
 });
 
 // This is the route we will send POST requests to save each search.
-app.post("/api", function(req, res) {
+/*app.post("/api", function(req, res) {
   console.log("BODY: " + req.body.location);
 
   // Here we'll save the location based on the JSON input.
@@ -76,6 +94,22 @@ app.post("/api", function(req, res) {
       res.send("Saved Search");
     }
   });
+});*/
+
+app.post("/modles", function(req, res) {
+  console.log("BODY: " + req.body.location);
+
+  // Here we'll save the location based on the JSON input.
+  // We'll use Date.now() to always get the current date time
+  shoes.create({
+    brand: req.body.brand,
+    year: req.body.year,
+    model: req.body.model,
+    color: req.body.color,
+    size: req.body.size,
+    condition: req.body.condition,
+    imageURL; req.body.imageURL
+  }
 });
 
 // -------------------------------------------------
