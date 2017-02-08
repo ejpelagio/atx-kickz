@@ -21,7 +21,7 @@ var shoesSchema = new Schema({
 
   size: Number,
 
-  condtion: String,
+  condition: String,
 
   imageURL: String
 
