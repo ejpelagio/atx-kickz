@@ -108,8 +108,8 @@ app.post("/modles", function(req, res) {
     color: req.body.color,
     size: req.body.size,
     condition: req.body.condition,
-    imageURL; req.body.imageURL
-  }
+    imageURL: req.body.imageURL
+  })
 });
 
 // -------------------------------------------------
