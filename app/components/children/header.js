@@ -6,9 +6,9 @@ var Navbar = React.createClass({
   // Here we describe this component's render method
   render: function() {
     return (
-    	<div class="page-header">
-      <ul class="nav nav-tabs">
-  	<li role="presentation" class="active"><a href="#">My Kicks</a></li>
+    	<div className="page-header">
+      <ul className="nav nav-tabs">
+  	<li role="presentation" className="active"><a href="#">My Kicks</a></li>
   	<li role="presentation"><a href="#">Browse</a></li>
   	<li role="presentation"><a href="#">Marketplace</a></li>
   	<li role="presentation"><a href="#">New Releases</a></li>

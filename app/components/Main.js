@@ -5,7 +5,7 @@ var React = require("react");
 var Form = require("./children/Form");
 var Results = require("./children/Results");
 var History = require("./children/History");
-
+var Navbar = require('./children/header');
 // Helper for making AJAX requests to our API
 var helpers = require("./utils/helpers");
 
@@ -65,12 +65,7 @@ var Main = React.createClass({
     return (
       <div className="container">
         <div className="row">
-          <div className="jumbotron">
-            <h2 className="text-center">Address Finder!</h2>
-            <p className="text-center">
-              <em>Enter a landmark to search for its exact address (ex: "Eiffel Tower").</em>
-            </p>
-          </div>
+         <Navbar />
 
           <div className="col-md-6">
 

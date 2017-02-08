@@ -12,7 +12,7 @@ var collectionsSchema = new Schema({
   },
   // date is just a string
   userId: String,
-  
+
 });
 
 // Create the Note model using the noteSchema
