@@ -3,6 +3,7 @@ var React = require("react");
 
 // Here we include all of the sub-components
 var Form = require("./children/Form");
+var FormsyTest = require("./children/FormsyTestv1.js");
 var Results = require("./children/Results");
 var History = require("./children/History");
 
@@ -89,6 +90,7 @@ var Main = React.createClass({
         <div className="row">
 
           <History history={this.state.history} />
+	  <FormsyTest />
 
         </div>
 
