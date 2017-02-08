@@ -9,7 +9,7 @@
     "start": "node server",
     "build": "webpack"
   },
-  "author": "Ahmed Haque",
+  "author": "Erik Pelagio",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.12.0",
@@ -28,5 +28,10 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "webpack": "^1.13.1"
-  }
+  },
+  "scripts": {
+   "watch" : "webpack -d --watch",
+   "build" : "webpack",
+   "serve" : "serve ./public"
+ }
 }
