@@ -3,6 +3,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var Promise = require("bluebird");
+mongoose.Promise = Promise;
 
 // Require History Schema
 // var History = require("./models/History");
@@ -17,10 +19,10 @@ var PORT = process.env.PORT || 3000;
 
 // Run Morgan for Logging
 app.use(logger("dev"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.text());
+//app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
 
@@ -77,6 +79,19 @@ app.get("/models", function(req, res) {
   });
 });
 
+app.get("/allshoes", function(req, res) {
+
+  // We will find all the records, sort it in descending order, then limit the records to 5
+  shoes.find({}, function(err, allshoes){
+    if(err)
+      console.log(err)
+    else{
+      console.log(allshoes);
+      res.send(doc);
+    }
+  });
+});
+
 // This is the route we will send POST requests to save each search.
 /*app.post("/api", function(req, res) {
   console.log("BODY: " + req.body.location);
@@ -96,9 +111,9 @@ app.get("/models", function(req, res) {
   });
 });*/
 
-app.post("/modles", function(req, res) {
-  console.log("BODY: " + req.body.location);
-
+app.post("/models", function(req, res) {
+  //console.log("BODY: " + req.body.location);
+  console.log(req.body);
   // Here we'll save the location based on the JSON input.
   // We'll use Date.now() to always get the current date time
   shoes.create({
@@ -110,6 +125,7 @@ app.post("/modles", function(req, res) {
     condition: req.body.condition,
     imageURL: req.body.imageURL
   })
+  res.send("posted");
 });
 
 // -------------------------------------------------
