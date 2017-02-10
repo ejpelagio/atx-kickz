@@ -5,9 +5,19 @@ var ReactDOM = require("react-dom");
 
 // Include the main Main Component
 var Main = require("./containers/Main");
+var routes = require('./config/routes')
+
+//Include the React Router component
 
 // This code here allows us to render our main component (in this case Main)
-ReactDOM.render(<Main />, document.getElementById("app"));
+//ReactDOM.render(<Main />, document.getElementById("app"));
+
+ReactDOM.render(routes, document.getElementById('app'))
+
+
+
+
+
 
 //Above is a place to consider for activating the REACt router
 
