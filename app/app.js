@@ -1,3 +1,31 @@
+//app.js
+//Adding requires and initializing passport configuration
+var passport = require('passport');
+var Auth0Strategy = require('passport-auth0');
+
+//Configure Passport to use the Auth0 strategy
+var strategy = new Auth0Strategy({
+    domain:       process.env.atxkickz.auth0.com,
+    clientID:     process.env.9LrT0OakVgTedhnC3dErYJporNcmkFRc,
+    clientSecret: process.env.****************************************************************,
+    callbackURL:  process.env.AUTH0_CALLBACK_URL || 'http://localhost:3000/callback'
+  }, function(accessToken, refreshToken, extraParams, profile, done) {
+    // accessToken is the token to call Auth0 API (not needed in the most cases)
+    // extraParams.id_token has the JSON Web Token
+    // profile has all the information from the user
+    return done(null, profile);
+  });
+
+
+
+
+
+
+
+
+
+
+
 // Include the Main React Dependencies
 var React = require("react");
 var ReactDOM = require("react-dom");
