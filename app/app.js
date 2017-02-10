@@ -1,5 +1,18 @@
 //app.js
+// Include the Main React Dependencies
+var React = require("react");
+var ReactDOM = require("react-dom");
+
+// Include the main Main Component
+var Main = require("./containers/Main");
+
+// This code here allows us to render our main component (in this case Main)
+ReactDOM.render(<Main />, document.getElementById("app"));
+
+
+
 //Adding requires and initializing passport configuration
+/*
 var passport = require('passport');
 var Auth0Strategy = require('passport-auth0');
 
@@ -15,16 +28,6 @@ var strategy = new Auth0Strategy({
     // profile has all the information from the user
     return done(null, profile);
   });
+*/
 
 
-
-
-// Include the Main React Dependencies
-var React = require("react");
-var ReactDOM = require("react-dom");
-
-// Include the main Main Component
-var Main = require("./components/Main");
-
-// This code here allows us to render our main component (in this case Main)
-ReactDOM.render(<Main />, document.getElementById("app"));

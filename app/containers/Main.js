@@ -2,13 +2,13 @@
 var React = require("react");
 
 // Here we include all of the sub-components
-var Form = require("./children/Form");
-var FormsyTest = require("./children/FormsyTestv1.js");
-var Results = require("./children/Results");
-var History = require("./children/History");
-var Navbar = require('./children/header');
+var Form = require("../components/children/Form");
+var FormsyTest = require("../components/children/FormsyTestv1.js");
+var Results = require("../components/children/Results");
+var History = require("../components/children/History");
+var Navbar = require('../components/Nav');
 // Helper for making AJAX requests to our API
-var helpers = require("./utils/helpers");
+var helpers = require("../utils/helpers");
 
 // Creating the Main component
 var Main = React.createClass({
