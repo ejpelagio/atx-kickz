@@ -2,10 +2,7 @@
 var React = require("react");
 
 // Here we include all of the sub-components
-var Form = require("./children/Form");
 var FormsyTest = require("./children/FormsyTestv1.js");
-var Results = require("./children/Results");
-var History = require("./children/History");
 var AllShoes = require("./children/AllShoes");
 var Navbar = require('./children/header');
 // Helper for making AJAX requests to our API
@@ -17,38 +14,39 @@ var Main = React.createClass({
   // Here we set a generic state associated with the number of clicks
   // Note how we added in this history state variable
   getInitialState: function() {
-    return { searchTerm: "", results: "",  history: [], allShoes: [], shoeData: "" };
+    return { allShoes: [], shoeData: "" };
   },
 
   // The moment the page renders get the History
   componentDidMount: function() {
     // Get the latest history.
+    
     helpers.getShoes().then(function(response) {
-      console.log(response);
+      //console.log(response);
       if (response !== this.state.allShoes) {
-        console.log("All Shoes", response.data);
         this.setState({ allShoes: response.data });
       }
     }.bind(this));
+    console.log("After mount: ",this.state);
   },
 
   // If the component changes (i.e. if a search is entered)...
-  componentDidUpdate: function() {
-    
-    helpers.postShoes(this.state.shoeData).then(function(){
-      console.log("posted!");
-    });
-    helpers.getShoes().then(function(response) {
-      console.log("got all the shoes!");
-    });
+  componentDidUpdate: function(prevProps, prevState) {
+    if(this.state.shoeData!=prevState.shoeData){
+      helpers.postShoes(this.state.shoeData).then(function(){
+        console.log("posted!");
+        
+        helpers.getShoes().then(function(response) {
+          console.log("shoelist: ", response.data);
+          this.setState({ allShoes: response.data});
+        }.bind(this));
+      
+      }.bind(this));
+    }
 
-    //}.bind(this));
   },
   // This function allows childrens to update the parent.
-  setTerm: function(term) {
-    this.setState({ searchTerm: term });
-  },
-
+  
   setShoeData: function(data) {
     this.setState({shoeData: data});
     console.log(data);
