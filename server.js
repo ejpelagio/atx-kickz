@@ -19,8 +19,8 @@ var PORT = process.env.PORT || 3000;
 
 // Run Morgan for Logging
 app.use(logger("dev"));
-//app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(bodyParser.text());
 //app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
@@ -69,7 +69,7 @@ app.get("/models", function(req, res) {
   // We will find all the records, sort it in descending order, then limit the records to 5
   shoes.find({}).sort([
     ["date", "descending"]
-  ]).limit(5).exec(function(err, doc) {
+  ]).limit(15).exec(function(err, doc) {
     if (err) {
       console.log(err);
     }

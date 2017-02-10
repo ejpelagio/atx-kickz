@@ -6,6 +6,7 @@ var Form = require("./children/Form");
 var FormsyTest = require("./children/FormsyTestv1.js");
 var Results = require("./children/Results");
 var History = require("./children/History");
+var AllShoes = require("./children/AllShoes");
 var Navbar = require('./children/header');
 // Helper for making AJAX requests to our API
 var helpers = require("./utils/helpers");
@@ -16,77 +17,60 @@ var Main = React.createClass({
   // Here we set a generic state associated with the number of clicks
   // Note how we added in this history state variable
   getInitialState: function() {
-    return { searchTerm: "", results: "", history: [] };
+    return { searchTerm: "", results: "",  history: [], allShoes: [], shoeData: "" };
   },
 
   // The moment the page renders get the History
   componentDidMount: function() {
     // Get the latest history.
-    helpers.getHistory().then(function(response) {
+    helpers.getShoes().then(function(response) {
       console.log(response);
-      if (response !== this.state.history) {
-        console.log("History", response.data);
-        this.setState({ history: response.data });
+      if (response !== this.state.allShoes) {
+        console.log("All Shoes", response.data);
+        this.setState({ allShoes: response.data });
       }
     }.bind(this));
   },
 
   // If the component changes (i.e. if a search is entered)...
   componentDidUpdate: function() {
+    
+    helpers.postShoes(this.state.shoeData).then(function(){
+      console.log("posted!");
+    });
+    helpers.getShoes().then(function(response) {
+      console.log("got all the shoes!");
+    });
 
-    // Run the query for the address
-    helpers.runQuery(this.state.searchTerm).then(function(data) {
-      if (data !== this.state.results) {
-        console.log("Address", data);
-        this.setState({ results: data });
-
-        // After we've received the result... then post the search term to our history.
-        helpers.postHistory(this.state.searchTerm).then(function() {
-          console.log("Updated!");
-
-          // After we've done the post... then get the updated history
-          helpers.getHistory().then(function(response) {
-            console.log("Current History", response.data);
-
-            console.log("History", response.data);
-
-            this.setState({ history: response.data });
-
-          }.bind(this));
-        }.bind(this));
-      }
-    }.bind(this));
+    //}.bind(this));
   },
   // This function allows childrens to update the parent.
   setTerm: function(term) {
     this.setState({ searchTerm: term });
   },
+
+  setShoeData: function(data) {
+    this.setState({shoeData: data});
+    console.log(data);
+    //helpers.postShoes(this.state.shoeData).then(function(){
+    //  console.log("posted test!")});
+  },
+
   // Here we render the function
   render: function() {
     return (
       <div className="container">
+        <Navbar />
         <div className="row">
-         <Navbar />
+          
 
           <div className="col-md-6">
-
-            <Form setTerm={this.setTerm} />
-
+            <FormsyTest setShoeData={this.setShoeData}/>
           </div>
 
           <div className="col-md-6">
-
-            <Results address={this.state.results} />
-
+            <AllShoes allShoes={this.state.allShoes} />
           </div>
-
-        </div>
-
-        <div className="row">
-
-          <History history={this.state.history} />
-	        <FormsyTest />
-
 
         </div>
 
