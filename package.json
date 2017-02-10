@@ -1,5 +1,5 @@
 {
-  "name": "react-example",
+  "name": "atxkickz",
   "version": "1.0.0",
   "description": "",
   "main": "public/index.html",
@@ -8,7 +8,7 @@
     "build": "webpack",
     "serve": "serve ./public"
   },
-  "author": "Erik Pelagio",
+  "author": "Erik (Big Poppa) Pelagio",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.12.0",
@@ -25,6 +25,7 @@
     "react-dom": "^0.14.3"
   },
   "devDependencies": {
+    "axios": "^0.12.0",
     "babel-core": "^6.3.13",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",

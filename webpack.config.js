@@ -5,6 +5,7 @@ module.exports = {
 
   // The plain compiled Javascript will be output into this file
   output: {
+    path: __dirname + '/public',
     filename: "public/bundle.js"
   },
 
@@ -14,6 +15,7 @@ module.exports = {
       {
         // Only working with files that in in a .js or .jsx extension
         test: /\.jsx?$/,
+        exclude: /node_modules/, 
         // Webpack will only process files in our app folder. This avoids processing
         // node modules and server files unnecessarily
         include: /app/,
