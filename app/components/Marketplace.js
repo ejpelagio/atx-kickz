@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class marketplace extends Component {
+export default class Marketplace extends Component {
     render(){
         return (
 
