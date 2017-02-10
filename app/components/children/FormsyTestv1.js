@@ -9,12 +9,13 @@ var FormsyTest = React.createClass({
         
         const multiOptions = [
             {label: '10', value: '10'},
-            {label: 'Option 2', value: 'two'},
-            {label: 'Option 3', value: 'three'}
+            {label: '11', value: '11'},
+            {label: '12', value: '12'}
         ];
 
         const submitForm = (data) => {
-        console.log(data); // eslint-disable-line no-console
+        this.props.setShoeData(data);
+        console.log(data); 
         }
 
         return (
@@ -45,16 +46,17 @@ var FormsyTest = React.createClass({
 
                     <Select
                         label="Shoe Size"
-                        name="ShoeSize"
+                        name="size"
                         options={multiOptions}
                         componentRef={(component) => { this.selectRef = component; } }
                     />
                     
+                    {/*
                     <File
                         label="Image URL"
                         name="file"
                         componentRef={(component) => { this.fileRef = component; } }
-                    />
+                    />*/}
                     
                     <Checkbox
                         label="Single checkbox"
