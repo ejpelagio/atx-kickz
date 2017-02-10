@@ -9,6 +9,7 @@ var Main = require("./containers/Main");
 // This code here allows us to render our main component (in this case Main)
 ReactDOM.render(<Main />, document.getElementById("app"));
 
+//Above is a place to consider for activating the REACt router
 
 
 //Adding requires and initializing passport configuration
