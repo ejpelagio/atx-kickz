@@ -18,6 +18,8 @@ var Nav = React.createClass({
          
          <ul className="nav nav-tabs">
         	
+
+
               <Link to="/MyKicks">
                   <li role="presentation"><a href="#">My Kicks</a></li>
               </Link>  
