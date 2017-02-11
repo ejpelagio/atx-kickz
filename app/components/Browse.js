@@ -8,7 +8,7 @@ export default class Browse extends React.Component {
 
 
 
-        	<h1>Hello from the browse page!</h1>
+        	<h1>Hello from the Browse page!</h1>
 
 
 
@@ -17,5 +17,6 @@ export default class Browse extends React.Component {
 
 
         );
+    
     }
 }

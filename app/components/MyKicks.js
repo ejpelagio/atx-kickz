@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class MyKicks extends Component {
+export default class MyKicks extends React.Component {
     render(){
         return (
 

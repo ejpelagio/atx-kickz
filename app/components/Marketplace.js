@@ -6,7 +6,7 @@ export default class Marketplace extends React.Component {
         return (
 
 
-        	<h1>Helloo from the Marketplace!</h1>
+        	<h1>Helloo from the Marketplace page!</h1>
 
 
 
