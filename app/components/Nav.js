@@ -12,33 +12,70 @@ var Nav = React.createClass({
   render: function() {
     return (
     
-    <div className="container">
+    <div className="container-fluid">
       
-      <div className="page-header">
-         
-         <ul className="nav nav-tabs">
+          <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
+            <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <a className="navbar-brand" href="#/Home">Atx Kickz</a>
+            <div className="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link to="/MyKicks">
+                    <a className="nav-link" href="/MyKicks">My Kicks <span className="sr-only">(current)</span></a>
+                  </Link>
+                </li>
+               
+                <li className="nav-item">
+                  <Link to="/Browse">
+                    <a className="nav-link">Browse</a>
+                  </Link>
+                </li>
+                
+                <li className="nav-item">
+                   <Link to="/Marketplace">
+                      <a className="nav-link" href="/">Marketplace</a>
+                   </Link>
+                </li>
+
+                <li className="nav-item">
+                 <Link to="/Marketplace">
+                  <a className="nav-link" href="/Contact">Contact</a>
+                 </Link>
+                </li>
+                
+              </ul>
+            </div>
+          </nav>
+
+      
         	
 
-
+          {/*
               <Link to="/MyKicks">
-                  <li role="presentation"><a href="#">My Kicks</a></li>
+                  <li role="presentation"><a href="#"> My Kicks</a></li>
               </Link>  
 
               <Link to="/Browse">
-                  <li role="presentation"><a href="#">Browse</a></li>
+                  <li role="presentation"><a href="#"> Browse</a></li>
               </Link>
                   
               <Link to="/Marketplace">
-                  <li role="presentation"><a href="#">Marketplace</a></li>
+                  <li role="presentation"><a href="#"> Marketplace</a></li>
               </Link>
 
               <Link to="/NewReleases"> 
-                  <li role="presentation"><a href="#">New Releases</a></li>
+                  <li role="presentation"><a href="#"> New Releases</a></li>
           	  </Link>
+
+
+
+            */}
           
-          </ul>
+          
       
-      </div>
+
           
 
         {this.props.children}
