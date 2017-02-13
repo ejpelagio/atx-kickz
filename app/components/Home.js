@@ -1,19 +1,13 @@
 import React from 'react';
-
+import Main from '../containers/Main'
 export default class Home extends React.Component {
     render(){
         
 
         return (
 
-
-
-        	<h1>Hello from the Home page!</h1>
-
-
-
-
-
+        	<Main /> 
+        	
 
 
         );

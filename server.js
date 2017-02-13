@@ -10,7 +10,7 @@ mongoose.Promise = Promise;
 // var History = require("./models/History");
 
 // Require History Schema
-//var shoes = require("./models/shoes");
+var shoes = require("./models/shoes");
 
 // Create Instance of Express
 var app = express();
@@ -19,16 +19,16 @@ var PORT = process.env.PORT || 3000;
 
 // Run Morgan for Logging
 app.use(logger("dev"));
-//app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.text());
+//app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("./public"));
 
 // -------------------------------------------------
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-/*
+
 mongoose.connect("mongodb://heroku_x64zbff1:v3srgq0jpnp9aiq12m477grpla@ds139979.mlab.com:39979/heroku_x64zbff1");
 var db = mongoose.connection;
 
@@ -39,7 +39,7 @@ db.on("error", function(err) {
 db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
-*/
+
 
 // -------------------------------------------------
 
@@ -65,13 +65,13 @@ app.get("/", function(req, res) {
   });
 });*/
 
-/*
+
 app.get("/models", function(req, res) {
 
   // We will find all the records, sort it in descending order, then limit the records to 5
   shoes.find({}).sort([
     ["date", "descending"]
-  ]).limit(5).exec(function(err, doc) {
+  ]).limit(15).exec(function(err, doc) {
     if (err) {
       console.log(err);
     }
@@ -80,7 +80,7 @@ app.get("/models", function(req, res) {
     }
   });
 });
-*/
+
 
 /*
 app.get("/allshoes", function(req, res) {
@@ -115,7 +115,7 @@ app.get("/allshoes", function(req, res) {
     }
   });
 });*/
-/*
+
 app.post("/models", function(req, res) {
   //console.log("BODY: " + req.body.location);
   console.log(req.body);
@@ -132,7 +132,7 @@ app.post("/models", function(req, res) {
   })
   res.send("posted");
 });
-*/
+
 
 
 
