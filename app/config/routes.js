@@ -1,4 +1,4 @@
-//Include the React library
+//Include the React librsary
 import React from 'react'
 import { render } from 'react-dom'
 import { browserHistory, Router, Route, Link, IndexRoute } from 'react-router'
@@ -11,7 +11,9 @@ import MyKicks from '../components/MyKicks'
 
 module.exports = (
     <Router history={browserHistory}>
+        
         <Route path="/" component={Nav} >
+           
            <IndexRoute component={Home} />
 	        <Route path="MyKicks" component={MyKicks} />
 	        <Route path="Browse" component={Browse} />
