@@ -23,12 +23,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(bodyParser.text());
 //app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-
 app.use(express.static("./public"));
 
 // -------------------------------------------------
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
+
 mongoose.connect("mongodb://heroku_x64zbff1:v3srgq0jpnp9aiq12m477grpla@ds139979.mlab.com:39979/heroku_x64zbff1");
 var db = mongoose.connection;
 
@@ -39,6 +39,7 @@ db.on("error", function(err) {
 db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
+
 
 // -------------------------------------------------
 
@@ -64,6 +65,7 @@ app.get("/", function(req, res) {
   });
 });*/
 
+
 app.get("/models", function(req, res) {
 
   // We will find all the records, sort it in descending order, then limit the records to 5
@@ -79,6 +81,8 @@ app.get("/models", function(req, res) {
   });
 });
 
+
+/*
 app.get("/allshoes", function(req, res) {
 
   // We will find all the records, sort it in descending order, then limit the records to 5
@@ -91,6 +95,7 @@ app.get("/allshoes", function(req, res) {
     }
   });
 });
+*/
 
 // This is the route we will send POST requests to save each search.
 /*app.post("/api", function(req, res) {
@@ -127,6 +132,19 @@ app.post("/models", function(req, res) {
   })
   res.send("posted");
 });
+
+
+
+
+
+//----------------------------------------------------------------------------------------
+// Any non API GET routes will be directed to our React App and handled by React Router
+
+app.get("*", function(req, res) {
+  res.sendFile(__dirname + "/app/index.html");
+});
+
+
 
 // -------------------------------------------------
 
