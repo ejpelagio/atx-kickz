@@ -13,12 +13,16 @@ var Nav = React.createClass({
     return (
     
     <div className="container-fluid">
-      
-          <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
+      <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
+           
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
-            <a className="navbar-brand" href="#/Home">Atx Kickz</a>
+            
+              <Link to="/Home">
+                <a className="navbar-brand" href="/Home">Atx Kickz</a>
+              </Link>
+
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav">
                 <li className="nav-item">
@@ -40,9 +44,9 @@ var Nav = React.createClass({
                 </li>
 
                 <li className="nav-item">
-                 <Link to="/Marketplace">
-                  <a className="nav-link" href="/Contact">Contact</a>
-                 </Link>
+                  <Link to="/NewReleases">
+                    <a className="nav-link" href="/NewReleases">New Releases</a>
+                  </Link>
                 </li>
                 
               </ul>
@@ -68,8 +72,6 @@ var Nav = React.createClass({
               <Link to="/NewReleases"> 
                   <li role="presentation"><a href="#"> New Releases</a></li>
           	  </Link>
-
-
 
             */}
           

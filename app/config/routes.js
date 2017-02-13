@@ -15,6 +15,8 @@ module.exports = (
         <Route path="/" component={Nav} >
            
            <IndexRoute component={Home} />
+	        
+	        <Route path="Home" component={Home} />
 	        <Route path="MyKicks" component={MyKicks} />
 	        <Route path="Browse" component={Browse} />
 	        <Route path="Marketplace" component={Marketplace} />
