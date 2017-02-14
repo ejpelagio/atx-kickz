@@ -79,7 +79,7 @@ var FormsyTest = React.createClass({
                     />
                     
                     <div className="container">
-                    <button type="button" className="btn btn-default" onClick={this.handleUpload}>Upload</button> 
+                    <button type="button" className="btn btn-default" onClick={this.handleUpload} style={{marginRight:"1em"}}>Upload</button> 
                     <span>  </span>
                                         
                     <input className="btn btn-primary" formNoValidate={true} type="submit" defaultValue="Submit" />
