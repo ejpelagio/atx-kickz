@@ -15,7 +15,7 @@ var AllShoes = React.createClass({
           {/* Here we use a map function to loop through an array in JSX */}
           {this.props.allShoes.map(function(search, i) {
             return (
-              <p key={i}>{search.brand} - {search.model}</p>
+              <div><p key={i}>{search.year} {search.brand} - {search.model}</p><a href={search.imageURL}>Link</a></div>
             );
           })}
         </div>
