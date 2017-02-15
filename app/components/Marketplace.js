@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 var MarketplaceCard = require("./children/MarketplaceCard");
 
