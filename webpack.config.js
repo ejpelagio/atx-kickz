@@ -1,7 +1,20 @@
+var webpack = require('webpack');
+
 module.exports = {
 
   // This is the entry point or start of our react applicaton
-  	entry: "./app/app.js",
+  plugins: [
+    new webpack.DefinePlugin({ // <-- key to reducing React's size
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.DedupePlugin(), //dedupe similar code 
+    new webpack.optimize.UglifyJsPlugin(), //minify everything
+    new webpack.optimize.AggressiveMergingPlugin()//Merge chunks 
+  ],
+
+  entry: "./app/app.js",
 
   // The plain compiled Javascript will be output into this file
   output: {
