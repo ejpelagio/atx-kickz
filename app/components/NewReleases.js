@@ -81,11 +81,15 @@ export default class NewReleases extends React.Component {
 				<div className="row">
 					  
 				   <div className="col">
+				      
 				      <KicksCard model = {nikeAirJordan1.model} description = {nikeAirJordan1.description} img= {nikeAirJordan1.img} date = {nikeAirJordan1.releaseDate}  />
+	        		
 	        		</div>
         	 	  
         	 	    <div className="col">
+        	 		 
         	 		  <KicksCard model = {vansJCrew.model} description = {vansJCrew.description} img= {vansJCrew.img}  date = {vansJCrew.releaseDate}  />
+        		    
         		    </div>
         		
         		</div>
