@@ -34,4 +34,4 @@ var Gallery = React.createClass ({
   }
 });
 
-module.exports = Gallary;
+// module.exports = Gallary;

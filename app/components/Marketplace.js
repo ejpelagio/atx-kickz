@@ -2,7 +2,7 @@ var React = require("react");
 var helpers = require("../utils/helpers");
 var MarketplaceCard = require("./children/MarketplaceCard");
 var AllShoes = require("./children/AllShoes");
-var Gallary = require("./children/Gallary")
+// var Gallary = require("./children/Gallary")
 
 var Marketplace = React.createClass ({
   getInitialState: function() {
@@ -55,8 +55,6 @@ var Marketplace = React.createClass ({
             })}
           </div>
 
-
-          <AllShoes allShoes={this.state.allShoes} />
 
         </div>
 
