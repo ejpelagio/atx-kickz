@@ -9,11 +9,12 @@ import {deepOrange500} from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
 
 const styles = {
   container: {
     textAlign: 'center',
-    paddingTop: 200,
+    paddingTop: 0,
   },
 };
 
@@ -56,6 +57,8 @@ class Main extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div style={styles.container}>
+        <AppBar title="ATXKicks" iconClassNameRight="muidocs-icon-navigation-expand-more"/>
+        
           <Dialog
             open={this.state.open}
             title="Super Secret Password"
@@ -64,6 +67,7 @@ class Main extends Component {
           >
             1-2-3-4-5
           </Dialog>
+          
           <h1>Material-UI</h1>
           <h2>example project</h2>
           <RaisedButton
