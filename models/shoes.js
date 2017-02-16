@@ -23,7 +23,15 @@ var shoesSchema = new Schema({
 
   condition: String,
 
-  imageURL: String
+  imageURL: String, 
+
+  cardImageURL: String,
+
+  forSale: Boolean, 
+
+  sellingPrice: Number, 
+
+  userID: String
 
 });
 

@@ -7,24 +7,29 @@ var FormsyTest = React.createClass({
   // Here we describe this component's render method
   getInitialState: function() {
     return {
-      imageURL: ""
+      imageURL: "",
+      imagePath: "",
+      transformURL: "http://res.cloudinary.com/dawscxdsi/image/upload/c_limit,w_400/"
     };
   },
 
   componentWillMount: function() {
         const script = document.createElement("script");
-        script.src = "//widget.cloudinary.com/global/all.js";
+        script.src = "https://widget.cloudinary.com/global/all.js";
         script.type = 'text/javascript';
         script.async = true;
-
         document.body.appendChild(script);
+
+
+
     },
 
   handleUpload: function() {
     cloudinary.openUploadWidget({ cloud_name: 'dawscxdsi', upload_preset: 'pjmooj37'}, 
       function(error, result) { 
+        console.log(this.state.transformURL+result[0].path);
         console.log(result[0].secure_url);
-        this.setState({imageURL: result[0].secure_url});
+        this.setState({imageURL: result[0].secure_url, pathName: result[0].path, transformURL: this.state.transformURL+result[0].path});
        }.bind(this));
   }, 
 
@@ -41,6 +46,7 @@ var FormsyTest = React.createClass({
         const submitForm = (data) => {
         console.log(this.state.imageURL);
         data.imageURL=this.state.imageURL;
+        data.transformURL=this.state.transformURL;
         this.props.setShoeData(data);
         console.log(data); 
         }
