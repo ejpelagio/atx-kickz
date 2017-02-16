@@ -49,7 +49,7 @@ var Marketplace = React.createClass ({
             {this.state.allShoes.map(function(search, i) {
               return (
                 <div className="col-md-3">
-                  <MarketplaceCard title={search.brand} image={search.imageURL} />
+                  <MarketplaceCard title={search.brand} image={search.cardImageURL} />
                 </div>
               );
             })}
