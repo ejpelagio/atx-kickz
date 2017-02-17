@@ -1,10 +1,25 @@
 //
 import React from 'react';
 import KicksCard from './children/KicksCard'
+import helpers from '../utils/helpers'
+import KicksCard from './children/KicksCard'
+
+
+
+var NewReleases = React.createClass({
+    getInitialState: function() {
+        return { newReleases: [], nrData: ""};
+    },
+})
+
+
+
+
+
 
 export default class NewReleases extends React.Component {
     render(){
-        
+       {
     	const nikeAirJordan1 = {
     	  releaseDate: "2/1/2017",
     	  brand: "Nike",
@@ -67,7 +82,7 @@ export default class NewReleases extends React.Component {
 
 		}; 
 	
-	
+	   
 	return (
         	<div className="container">
 				

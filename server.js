@@ -11,6 +11,7 @@ mongoose.Promise = Promise;
 
 // Require History Schema
 var shoes = require("./models/shoes");
+var newReleases = require("./models/newReleases");
 
 // Create Instance of Express
 var app = express();
@@ -25,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("./public"));
 
-// -------------------------------------------------
+// ----------------------------------------------------------
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
 
@@ -41,7 +42,7 @@ db.once("open", function() {
 });
 
 
-// -------------------------------------------------
+// -----------------------------------------------------------
 
 // Main "/" Route. This will redirect the user to our rendered React application
 app.get("/", function(req, res) {
