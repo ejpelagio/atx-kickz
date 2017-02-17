@@ -10,7 +10,22 @@ var newReleasesSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "shoeId"
   },
+    brand: String,
+  // as is the noteText
+  year: Number,
 
+  model: String,
+
+  color: String,
+  
+  size: Number,
+  
+  releaseDate: String, 
+  
+  img: String, 
+  
+  description: String,
+ 
 });
 
 // Create the Note model using the noteSchema

@@ -33,10 +33,8 @@ var Marketplace = React.createClass ({
           console.log("shoelist: ", response.data);
           this.setState({ allShoes: response.data});
         }.bind(this));
-
       }.bind(this));
     }
-
   },
 
 
@@ -61,9 +59,7 @@ var Marketplace = React.createClass ({
         </div>
 
       )
-
-
-}
+  }
 });
 
 module.exports=Marketplace;
