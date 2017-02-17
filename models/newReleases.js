@@ -14,7 +14,7 @@ var newReleasesSchema = new Schema({
 });
 
 // Create the Note model using the noteSchema
-var NewReleases.js = mongoose.model("newReleases", newReleasesSchema);
+var NewReleases = mongoose.model("newReleases", newReleasesSchema);
 
 // Export the Note model
 module.exports = NewReleases;
