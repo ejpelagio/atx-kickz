@@ -3,29 +3,30 @@ var React = require("react");
 
 //Importing React-masonry
 var Masonry = require("react-masonry-component");
+var MarketplaceCard = require("./MarketplaceCard");
 
 var masonryOptions = {
-    transitionDuration: 0
+    transitionDuration: 500
 };
 
 var Gallery = React.createClass ({
   render: function () {
     var childElements = this.props.elements.map(function(element){
       return (
-        <li className="image-element-class">
-          <img src={element.src} />
-        </li>
+
+          <MarketplaceCard title={element.brand} image={element.cardImageURL} />
+
       );
 
     });
 
       return (
           <Masonry
-              className={'my-gallery-class'} // default ''
-              elementType={'ul'} // default 'div'
-              options={masonryOptions} // default {}
-              disableImagesLoaded={false} // default false
-              updatedOnEachImageLoaded={false} // default false and works only if disableImagesLoaded is false
+              className={'my-gallery-class'}
+              elementType={'div'}
+              options={masonryOptions}
+              disableImagesLoaded={false}
+              updatedOnEachImageLoaded={false}
           >
               {childElements}
           </Masonry>
@@ -34,4 +35,4 @@ var Gallery = React.createClass ({
   }
 });
 
-// module.exports = Gallary;
+module.exports = Gallery;

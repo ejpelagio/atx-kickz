@@ -2,7 +2,7 @@ var React = require("react");
 var helpers = require("../utils/helpers");
 var MarketplaceCard = require("./children/MarketplaceCard");
 var AllShoes = require("./children/AllShoes");
-// var Gallary = require("./children/Gallary")
+var Gallery = require("./children/Masonry")
 
 var Marketplace = React.createClass ({
   getInitialState: function() {
@@ -44,8 +44,8 @@ var Marketplace = React.createClass ({
         return (
         <div>
           <h1><b>Market Place</b></h1>
-          <MarketplaceCard />;
-          <div className="row">
+
+          <div className="row marketPlace">
             {this.state.allShoes.map(function(search, i) {
               return (
                 <div className="col-md-3">
@@ -54,9 +54,12 @@ var Marketplace = React.createClass ({
               );
             })}
           </div>
+          <Gallery elements={this.state.allShoes}/>
 
 
         </div>
+
+
 
       )
 
