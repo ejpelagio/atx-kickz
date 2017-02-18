@@ -6,3 +6,23 @@ body {
   font-size: 13px;
   line-height: 20px;
 }
+
+img { width: 100%; }
+.container-fluid { max-width: 1200px; }
+
+.card{
+	box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+[class*="row"] {
+	margin-bottom: 1rem;
+  justify-content: center;
+}
+
+[class*="col-"] {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	width: 100%;
+}
