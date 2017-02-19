@@ -128,10 +128,22 @@ app.post("/models", function(req, res) {
     color: req.body.color,
     size: req.body.size,
     condition: req.body.condition,
-    imageURL: req.body.imageURL, 
+    imageURL: req.body.imageURL,
     cardImageURL: req.body.transformURL
   })
   res.send("posted");
+});
+
+app.get("/models/shoes/brand_", function(req, res) {
+  if(req.query.name) {
+    db.users.find({"model":req.query.name}, function (err,docs) { console.log(docs); res.json(docs); });
+  }
+  else{
+    db.user.find(function (err, docs) { console.log(docs); res.json(docs); });
+  }
+
+
+
 });
 
 
