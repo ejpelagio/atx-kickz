@@ -26,7 +26,7 @@ export default class Home extends React.Component {
           <div className="container">
             <div className="row">
               <div className="mbr-footer-content col-xs-12 col-md-3">
-                <div><img src="assets/images/shoe-iconatx-v2-1-128x54.png" /></div>
+                <div><img src="assets/images/Shoe_iconATX_192x81.png" /></div>
               </div>
               <div className="mbr-footer-content col-xs-12 col-md-3">
                 <p><strong>Address</strong><br />
