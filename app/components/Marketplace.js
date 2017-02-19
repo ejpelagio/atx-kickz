@@ -44,19 +44,22 @@ var Marketplace = React.createClass ({
         return (
         <div>
           <h1><b>Market Place</b></h1>
-
-          <div className="row marketPlace">
-            {this.state.allShoes.map(function(search, i) {
-              return (
-                <div className="col-md-3">
-                  <MarketplaceCard title={search.brand} image={search.cardImageURL} />
-                </div>
-              );
-            })}
+          <div className="container-fluid">
+            <div className="row">
+              <div className="card-deck">
+                {this.state.allShoes.map(function(search, i) {
+                  return (
+                    <div className="col-3">
+                      {/*<MarketplaceCard title={search.brand} image={search.cardImageURL} />*/}
+                    </div>
+                  );
+                })}
+              </div>
+             
+              
+            </div>
           </div>
           <Gallery elements={this.state.allShoes}/>
-
-
         </div>
 
 
