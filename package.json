@@ -11,6 +11,7 @@
   "author": "Erik (Big Poppa) Pelagio",
   "license": "ISC",
   "dependencies": {
+    "auth0-lock": "^10.11.0",
     "axios": "^0.15.3",
     "body-parser": "^1.15.2",
     "cloudinary": "^1.7.0",
