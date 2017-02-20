@@ -134,9 +134,9 @@ app.post("/models", function(req, res) {
   res.send("posted");
 });
 
-app.get("/models/shoes/brand_", function(req, res) {
-  if(req.query.name) {
-    db.users.find({"model":req.query.name}, function (err,docs) { console.log(docs); res.json(docs); });
+app.get("/models/:brand", function(req, res) {
+  if(req.params.brand) {
+    shoes.find({"brand":req.params.brand}, function (err,docs) { console.log(docs); res.json(docs); });
   }
   else{
     db.user.find(function (err, docs) { console.log(docs); res.json(docs); });
