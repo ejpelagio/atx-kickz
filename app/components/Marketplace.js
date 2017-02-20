@@ -3,6 +3,7 @@ var helpers = require("../utils/helpers");
 var MarketplaceCard = require("./children/MarketplaceCard");
 var AllShoes = require("./children/AllShoes");
 
+var Gallery = require("./children/Masonry")
 
 var Marketplace = React.createClass ({
   getInitialState: function() {
@@ -29,12 +30,17 @@ var Marketplace = React.createClass ({
       helpers.postShoes(this.state.shoeData).then(function(){
         console.log("posted!");
 
+
         helpers.getShoes().then(function(response) {
           console.log("shoelist: ", response.data);
           this.setState({ allShoes: response.data});
         }.bind(this));
       }.bind(this));
     }
+
+
+
+
   },
 
 
@@ -42,24 +48,26 @@ var Marketplace = React.createClass ({
         return (
         <div>
           <h1><b>Market Place</b></h1>
-          <MarketplaceCard />;
-          <div className="row">
-            {this.state.allShoes.map(function(search, i) {
-              return (
-                <div className="col-md-3">
-                  <MarketplaceCard title={search.brand} image={search.cardImageURL} />
-                </div>
-              );
-            })}
+		  <div className="container-fluid">
+            <div className="row">
+              <div className="card-deck">
+                {this.state.allShoes.map(function(search, i) {
+                  return (
+                    <div className="col-3">
+                      {/*<MarketplaceCard title={search.brand} image={search.cardImageURL} />*/}
+                    </div>
+                  );
+                })}
+              </div>           
+              </div>
           </div>
-
-
-          <AllShoes allShoes={this.state.allShoes} />
-
+          <Gallery elements={this.state.allShoes}/>
         </div>
-
       )
-  }
+
+
+}
+
 });
 
 module.exports=Marketplace;

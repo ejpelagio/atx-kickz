@@ -22,7 +22,7 @@ var Main = React.createClass({
   // The moment the page renders get the History
   componentDidMount: function() {
     // Get the latest history.
-    
+
     helpers.getShoes().then(function(response) {
       //console.log(response);
       if (response !== this.state.allShoes) {
@@ -37,18 +37,18 @@ var Main = React.createClass({
     if(this.state.shoeData!=prevState.shoeData){
       helpers.postShoes(this.state.shoeData).then(function(){
         console.log("posted!");
-        
+
         helpers.getShoes().then(function(response) {
           console.log("shoelist: ", response.data);
           this.setState({ allShoes: response.data});
         }.bind(this));
-      
+
       }.bind(this));
     }
 
   },
   // This function allows childrens to update the parent.
-  
+
   setShoeData: function(data) {
     this.setState({shoeData: data});
     console.log(data);
@@ -60,9 +60,9 @@ var Main = React.createClass({
   render: function() {
     return (
       <div className="container">
-        
+
         <div className="row">
-          
+
 
           <div className="col-md-6">
             <FormsyTest setShoeData={this.setShoeData}/>

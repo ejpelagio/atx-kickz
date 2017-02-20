@@ -14,18 +14,12 @@ var newReleasesSchema = new Schema({
   // as is the noteText
   year: Number,
 
-  model: String,
-
-  color: String,
-  
-  size: Number,
-  
   releaseDate: String, 
   
   img: String, 
   
   description: String,
- 
+
 });
 
 // Create the Note model using the noteSchema
