@@ -30,44 +30,37 @@ var Marketplace = React.createClass ({
       helpers.postShoes(this.state.shoeData).then(function(){
         console.log("posted!");
 
-
         helpers.getShoes().then(function(response) {
           console.log("shoelist: ", response.data);
           this.setState({ allShoes: response.data});
         }.bind(this));
       }.bind(this));
     }
+},
 
 
-
-
-  },
-
-
-    render: function(){
-        return (
-        <div>
-          <h1><b>Market Place</b></h1>
-		  <div className="container-fluid">
-            <div className="row">
-              <div className="card-deck">
-                {this.state.allShoes.map(function(search, i) {
-                  return (
-                    <div className="col-3">
-                      {/*<MarketplaceCard title={search.brand} image={search.cardImageURL} />*/}
+render: function(){
+  return (
+          <div>
+            <h1><b>Market Place</b></h1>
+      		  <div className="container-fluid">
+                  <div className="row">
+                    <div className="card-deck">
+                      {this.state.allShoes.map(function(search, i) {
+                        return (
+                          <div className="col-3">
+                            {/*<MarketplaceCard title={search.brand} image={search.cardImageURL} />*/}
+                          </div>
+                        );
+                      })}
+                    </div>           
                     </div>
-                  );
-                })}
-              </div>           
-              </div>
-          </div>
-          <Gallery elements={this.state.allShoes}/>
-        </div>
-      )
-
-
+                </div>
+                <Gallery elements={this.state.allShoes}/>
+            </div>
+        )
 }
-
 });
+
 
 module.exports=Marketplace;

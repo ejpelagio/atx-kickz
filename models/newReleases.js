@@ -6,19 +6,19 @@ var Schema = mongoose.Schema;
 // Create the user Schema
 var newReleasesSchema = new Schema({
   // Mongo id
-  _shoeId: {
+    _shoeId: {
     type: Schema.Types.ObjectId,
     ref: "shoeId"
   },
-    brand: String,
+  title: String,
   // as is the noteText
-  year: Number,
+  price: Number,
 
   releaseDate: String, 
   
-  img: String, 
+  colorway: String,
   
-  description: String,
+  img: String, 
 
 });
 

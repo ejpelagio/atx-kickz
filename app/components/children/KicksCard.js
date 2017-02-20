@@ -13,8 +13,8 @@ var KicksCard = React.createClass({
 			  
 				  <div className="card-block">
 				    <h4 className="card-title">{this.props.date}</h4>
-				    <p className="card-text">{this.props.description}</p>
-				    <a href="#" className="btn btn-primary">Go somewhere</a>
+				    <p className="card-text">{this.props.title}</p>
+				    <p className="card-text">{this.props.price}</p>
 				  </div>
 			
 		</div>
