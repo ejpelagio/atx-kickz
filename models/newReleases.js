@@ -8,7 +8,7 @@ var newReleasesSchema = new Schema({
   // Mongo id
     _shoeId: {
     type: Schema.Types.ObjectId,
-    ref: "shoeId"
+    ref: "newReleases"
   },
   title: String,
   // as is the noteText
