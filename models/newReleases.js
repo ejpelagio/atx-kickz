@@ -11,10 +11,18 @@ var newReleasesSchema = new Schema({
     ref: "shoeId"
   },
 
+  // as is the noteText
+  releaseDate: String, 
+  
+  img: String, 
+  
+  description: String,
+
+
 });
 
 // Create the Note model using the noteSchema
-var NewReleases.js = mongoose.model("newReleases", newReleasesSchema);
+var NewReleases = mongoose.model("newReleases", newReleasesSchema);
 
 // Export the Note model
 module.exports = NewReleases;

@@ -11,6 +11,7 @@ mongoose.Promise = Promise;
 
 // Require History Schema
 var shoes = require("./models/shoes");
+var newReleases = require("./models/newReleases");
 
 // Create Instance of Express
 var app = express();
