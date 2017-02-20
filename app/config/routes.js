@@ -10,6 +10,16 @@ import Browse from '../components/Browse'
 import NewReleases from '../components/NewReleases'
 import Marketplace from '../components/Marketplace'
 import MyKicks from '../components/MyKicks'
+//import Login from '../components/Login'
+import AuthService from '../utils/AuthService'
+
+const auth = new AuthService('RZGqR5TtN0mjdYSoHcfZ8VWO8xmiBBS1', 'atxkicks.auth0.com');
+
+const requireAuth = (nextState, replace) => {
+  if (!auth.loggedIn()) {
+    replace({ pathname: '/Login' })
+  }
+}
 
 module.exports = (
     <Router history={browserHistory}>
@@ -24,6 +34,7 @@ module.exports = (
 	        <Route path="Browse" component={Browse} />
 	        <Route path="Marketplace" component={Marketplace} />
 	        <Route path="NewReleases" component={NewReleases} />
+	        <Route path="Login" component = {Login} />
 	        
 
        	</Route>

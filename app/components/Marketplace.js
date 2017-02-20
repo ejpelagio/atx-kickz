@@ -30,7 +30,7 @@ var Marketplace = React.createClass ({
         console.log("posted!");
 
         helpers.getShoes().then(function(response) {
-          console.log("shoelist: ", response.data);
+          //console.log("shoelist: ", response.data);
           this.setState({ allShoes: response.data});
         }.bind(this));
 
