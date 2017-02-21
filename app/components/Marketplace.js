@@ -49,7 +49,7 @@ var Marketplace = React.createClass ({
           <DropdownButton />
           <div className="container-fluid">
             <div className="row">
-              <div className="card-deck">
+              <div className="card-deck" id="cards">
                 {this.state.allShoes.map(function(search, i) {
                   return (
                     <div className="col-3">
