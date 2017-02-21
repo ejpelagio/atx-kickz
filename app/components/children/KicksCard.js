@@ -15,6 +15,7 @@ var KicksCard = React.createClass({
 				    <h4 className="card-title">{this.props.date}</h4>
 				    <p className="card-text">{this.props.title}</p>
 				    <p className="card-text">{this.props.price}</p>
+				    <p className="card-text">{this.props.colorway}</p>
 				  </div>
 			
 		</div>

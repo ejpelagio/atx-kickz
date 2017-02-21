@@ -13,13 +13,9 @@ var newReleasesSchema = new Schema({
   title: String,
   // as is the noteText
   price: Number,
-
   releaseDate: String, 
-  
   colorway: String,
-  
   img: String, 
-
 });
 
 // Create the Note model using the noteSchema

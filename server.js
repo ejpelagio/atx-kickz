@@ -83,7 +83,7 @@ app.get("/models", function(req, res) {
 });
 
 
-app.get("/newReleases", function(req, res) {
+app.get("/api/newReleases", function(req, res) {
 
   // We will find all the records, sort it in descending order, then limit the records to 5
   newReleases.find({}).sort([

@@ -5,15 +5,12 @@ var axios = require("axios");
 // Helper functions for making API Calls
 var helper = {
 
-  runQuery: function(location) {
-
   getNewReleases: function(){
 
-    return axios.get("/models");
+    return axios.get("/api/NewReleases");
   },
 
 
-  // This function hits our own server to retrieve the record of query results
   getHistory: function() {
     return axios.get("/api");
   },
@@ -27,6 +24,7 @@ var helper = {
   postShoes: function(shoeData) {
     return axios.post("/models", shoeData);
   }
+
 };
 
 // We export the API helper

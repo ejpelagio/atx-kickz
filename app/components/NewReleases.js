@@ -1,70 +1,50 @@
-import React from 'react';
-import helpers from '../utils/helpers'
-import KicksCard from './children/KicksCard'
+var React = require("react");
+var helpers = require("../utils/helpers");
+var KicksCard = require("./children/KicksCard");
 
 
-var newReleases = React.createClass ({
+
+var NewReleases = React.createClass ({
   getInitialState: function() {
-    return { allShoes: [], shoeData: "" };
+    return { allNewShoes: [] };
   },
-
-    
-    // The moment the page renders get the History
+// The moment the page renders get the History
  componentDidMount: function() {
     // Get the latest history.
-
-    helpers.getShoes().then(function(response) {
+    helpers.getNewReleases().then(function(response) {
       console.log(response);
-      if (response !== this.state.allShoes) {
-        this.setState({ allShoes: response.data });
+      if (response !== this.state.allNewShoes) {
+        this.setState({ allNewShoes: response.data });
       }
-      console.log("Check state", this.state.allShoes);
+      console.log("Check state", this.state.allNewShoes);
     }.bind(this));
     console.log("After mount: ",this.state);
   },
 
 
-    // If the component changes (i.e. if a search is entered)...
-componentDidUpdate: function(prevProps, prevState) {
-  if(this.state.shoeData!=prevState.shoeData){
-    
-    helpers.postShoes(this.state.shoeData).then(function(){
-        console.log("posted!");
-     
-     helpers.getShoes().then(function(response) {
-          console.log("shoelist: ", response.data);
-          this.setState({ allShoes: response.data});
-        }.bind(this));
-      }.bind(this));
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export default class NewReleases extends React.Component{
-    render(){
-    
-	
-	   
-	return (
-        	
-               
-
-        );
-    }
+render: function(){
+  return (
+        <div>
+            
+            <h1><b>New Releases</b></h1>
+            <div className="container-fluid">
+                  <div className="row">
+                    <div className="card-deck">
+                      {this.state.allNewShoes.map(function(find, i) {
+                        return (
+                          <div className="col-3">
+                            <KicksCard title={find.title} date={find.releaseDate} image={find.img} price={find.price} color={find.colorway} />
+                          </div>
+                        );
+                      })}
+                    </div>           
+                    </div>
+                </div>
+              {/* <Gallery elements={this.state.allNewShoes}/>   */}
+        </div>
+        )
 }
+});
 
 
-
-
+module.exports= NewReleases;
