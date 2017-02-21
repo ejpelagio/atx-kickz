@@ -146,6 +146,20 @@ app.get("/models/:brand", function(req, res) {
 
 });
 
+app.get("/models/brand/getAll", function(req, res) {
+
+  // We will find all the records, sort it in descending order, then limit the records to 5
+  shoes.find({}).distinct("brand",
+    function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
+
 
 
 

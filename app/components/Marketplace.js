@@ -2,7 +2,9 @@ var React = require("react");
 var helpers = require("../utils/helpers");
 var MarketplaceCard = require("./children/MarketplaceCard");
 var AllShoes = require("./children/AllShoes");
-var Gallery = require("./children/Masonry")
+var Gallery = require("./children/Masonry");
+var DropdownButton = require("./children/DropdownFilter");
+
 
 var Marketplace = React.createClass ({
   getInitialState: function() {
@@ -44,6 +46,7 @@ var Marketplace = React.createClass ({
         return (
         <div>
           <h1><b>Market Place</b></h1>
+          <DropdownButton />
           <div className="container-fluid">
             <div className="row">
               <div className="card-deck">
@@ -55,8 +58,8 @@ var Marketplace = React.createClass ({
                   );
                 })}
               </div>
-             
-              
+
+
             </div>
           </div>
           <Gallery elements={this.state.allShoes}/>
