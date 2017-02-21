@@ -148,6 +148,7 @@ app.post("/models", function(req, res) {
     condition: req.body.condition,
     imageURL: req.body.imageURL, 
     cardImageURL: req.body.transformURL
+
   })
   res.send("posted");
 });

@@ -53,12 +53,18 @@ render: function(){
                           </div>
                         );
                       })}
-                    </div>           
+                    </div>
                     </div>
                 </div>
                 <Gallery elements={this.state.allShoes}/>
             </div>
-        )
+
+
+
+      )
+
+
+
 }
 });
 
