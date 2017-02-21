@@ -29,18 +29,18 @@ render: function(){
             <h1><b>New Releases</b></h1>
             <div className="container-fluid">
                   <div className="row">
-                    <div className="card-deck">
+                 
                       {this.state.allNewShoes.map(function(find, i) {
                         return (
-                          <div className="col-3">
-                            <KicksCard title={find.title} date={find.releaseDate} image={find.img} price={find.price} color={find.colorway} />
+                          <div className="col-sm-4 col-md-4 col-lg-3">
+                            <KicksCard title={find.title} date={find.releaseDate} img={find.img} price={find.price} color={find.colorway} />
                           </div>
                         );
                       })}
-                    </div>           
+                             
                     </div>
                 </div>
-              {/* <Gallery elements={this.state.allNewShoes}/>   */}
+          ]
         </div>
         )
 }

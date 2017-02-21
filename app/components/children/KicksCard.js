@@ -9,10 +9,10 @@ var KicksCard = React.createClass({
      <div>
      		
      	<div className="card">
-			  <img className="card-img-top" src={this.props.img} width="448" height="300" alt="Card image cap" />
+			  <img className="card-img-top" src={this.props.img} width="100%"  alt="Card image cap" />
 			  
 				  <div className="card-block">
-				    <h4 className="card-title">{this.props.date}</h4>
+				    <h5 className="card-title">{this.props.date}</h5>
 				    <p className="card-text">{this.props.title}</p>
 				    <p className="card-text">{this.props.price}</p>
 				    <p className="card-text">{this.props.colorway}</p>
