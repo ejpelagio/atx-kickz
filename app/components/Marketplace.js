@@ -4,7 +4,19 @@ var MarketplaceCard = require("./children/MarketplaceCard");
 var AllShoes = require("./children/AllShoes");
 var Gallery = require("./children/Masonry");
 var DropdownButton = require("./children/DropdownFilter");
+var Select = require('react-select');
 
+
+var options = [
+    { value: 'All', label: 'All' },
+    { value: 'Nike', label: 'Nike' },
+    { value: 'Adidas', label: 'Adidas' },
+    { value: 'Bata', label: 'Bata' }
+];
+
+function logChange(val) {
+    console.log("Selected: " + val.label);
+}
 
 var Marketplace = React.createClass ({
   getInitialState: function() {
@@ -45,8 +57,16 @@ var Marketplace = React.createClass ({
     render: function(){
         return (
         <div>
-          <h1><b>Market Place</b></h1>
-          <DropdownButton />
+                   
+          <div className="row bodyContainer">
+          <div className="col-lg-3 col-md-3 col-sm-6">
+          <h5>Select Brand</h5>
+          <Select
+              name="form-field-name"
+              value="All"
+              options={options}
+              onChange={logChange}
+          /></div></div>
           <div className="container-fluid">
             <div className="row">
               <div className="card-deck" id="cards">
