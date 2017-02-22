@@ -13,8 +13,7 @@ var Gallery = React.createClass ({
   render: function () {
     var childElements = this.props.elements.map(function(element){
       return (
-
-          <MarketplaceCard title={element.brand + " " + element.model} image={element.cardImageURL} price={element.sellingPrice} comments={element.comments}/>
+        <MarketplaceCard title={element.brand + " " + element.model} image={element.cardImageURL} price={element.sellingPrice} comments={element.comments}/>
 
       );
 

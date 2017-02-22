@@ -20,6 +20,10 @@ var helper = {
       return axios.get("/models");
   },
 
+  getShoesV2: function(filter) {
+    return axios.get("/models/"+filter);
+  },
+
   // This function posts new searches to our database.
   postShoes: function(shoeData) {
     return axios.post("/models", shoeData);
