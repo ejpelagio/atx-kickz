@@ -17,7 +17,7 @@ var helper = {
 
   // This function hits our own server to retrieve the record of query results
   getShoes: function() {
-    return axios.get("/models");
+      return axios.get("/models");
   },
 
   // This function posts new searches to our database.
