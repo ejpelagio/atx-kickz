@@ -147,7 +147,10 @@ app.post("/models", function(req, res) {
     size: req.body.size,
     condition: req.body.condition,
     imageURL: req.body.imageURL,
-    cardImageURL: req.body.transformURL
+    cardImageURL: req.body.transformURL,
+    comment: req.body.comment,
+    sellingPrice: req.body.sellingPrice, 
+    zipCode: req.body.zipCode
 
   })
   res.send("posted");
