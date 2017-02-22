@@ -8,19 +8,26 @@ var Select = require('react-select');
 
 
 var options = [
-    { value: 'All', label: 'All' },
+    { value: '', label: 'All' },
     { value: 'Nike', label: 'Nike' },
     { value: 'Adidas', label: 'Adidas' },
     { value: 'Bata', label: 'Bata' }
 ];
 
-function logChange(val) {
-    console.log("Selected: " + val.label);
-}
+//function logChange(val) {
+//    this.setState({filter: val});/
+//    console.log("Selected: " + this.state.filter);
+//}
 
 var Marketplace = React.createClass ({
   getInitialState: function() {
-    return { allShoes: [], shoeData: "" };
+    return { allShoes: [], shoeData: "", filter: "" };
+  },
+
+  logChange: function(val){
+    this.setState({filter: val.value});
+    //console.log("Selected: " + this.state.filter);
+
   },
 
   // The moment the page renders get the History
@@ -51,21 +58,29 @@ var Marketplace = React.createClass ({
       }.bind(this));
     }
 
+    if(this.state.filter!=prevState.filter){
+       helpers.getShoesV2(this.state.filter).then(function(response) {
+         console.log("shoelist: ", response.data);
+         this.setState({ allShoes: response.data});
+       }.bind(this));
+
+       console.log("Selected: " + this.state.filter);
+    }
   },
 
 
     render: function(){
         return (
         <div>
-                   
-          <div className="row bodyContainer">
-          <div className="col-lg-3 col-md-3 col-sm-6">
+
+          <div className="row bodyContainer" style={{"padding-left":"1rem"}}>
+          <div className="col-lg-3 col-md-3 col-sm-6" >
           <h5>Select Brand</h5>
           <Select
               name="form-field-name"
               value="All"
               options={options}
-              onChange={logChange}
+              onChange={this.logChange}
           /></div></div>
           <div className="container-fluid">
             <div className="row">
