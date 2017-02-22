@@ -144,11 +144,37 @@ app.post("/models", function(req, res) {
     imageURL: req.body.imageURL,
     cardImageURL: req.body.transformURL,
     comments: req.body.comments,
-    sellingPrice: req.body.sellingPrice, 
+    sellingPrice: req.body.sellingPrice,
     zipCode: req.body.zipCode
 
   })
   res.send("posted");
+});
+
+app.get("/models/:brand", function(req, res) {
+  if(req.params.brand) {
+    shoes.find({"brand":req.params.brand}, function (err,docs) { console.log(docs); res.json(docs); });
+  }
+  else{
+    db.user.find(function (err, docs) { console.log(docs); res.json(docs); });
+  }
+
+
+
+});
+
+app.get("/models/brand/getAll", function(req, res) {
+
+  // We will find all the records, sort it in descending order, then limit the records to 5
+  shoes.find({}).distinct("brand",
+    function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
 });
 
 

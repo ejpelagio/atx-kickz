@@ -18,7 +18,9 @@ var Nav = React.createClass({
               <div className="mbr-table">
                 <div className="mbr-table-cell">
                   <div className="navbar-brand">
-                    <a href="https://atxkicks.heroku.com" className="navbar-logo"><img src="assets/images/shoe-iconv4-162x128.png" alt="Mobirise" /></a>
+                    <Link to="/Home">
+                    <a href="/Home" className="navbar-logo"><img src="assets/images/shoe-iconv4-162x128.png" alt="ATX-KICKS" /></a>
+                    </Link>
                      <Link to="/Home">
                     <a className="navbar-caption" href="/Home">ATX-KICKS</a>
                     </Link>

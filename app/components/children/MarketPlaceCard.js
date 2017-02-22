@@ -12,7 +12,9 @@ render: function(){
 
   return(
 
-<div className="card" style={{width: "22rem"}}>
+
+<div className="card" style={{width: "20rem"}}>
+
   <img className="card-img-top" src={this.props.image} alt="Card image cap" style={{width:"100%"}}/>
   {price}
   <div className="card-block">
@@ -21,8 +23,10 @@ render: function(){
     <p className="card-text">{this.props.comments} Example text goes here</p>
     <p className="card-text">{this.props.zipCode}</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
+
   </div>
 </div>
+
 );
 }
 });

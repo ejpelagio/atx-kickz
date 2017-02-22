@@ -14,7 +14,9 @@ var Gallery = React.createClass ({
     var childElements = this.props.elements.map(function(element){
       return (
 
+
           <MarketplaceCard title={element.brand + " " + element.model} image={element.cardImageURL} price={element.sellingPrice} date={element.date} zipCode={element.zipCode} comments={element.comments}/>
+
 
 
       );
