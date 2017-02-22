@@ -1,5 +1,7 @@
 import React from 'react';
-import Main from '../containers/Main'
+import Main from '../containers/Main';
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 export default class Home extends React.Component {
     render(){
         
@@ -15,7 +17,15 @@ export default class Home extends React.Component {
                 <div className="mbr-section col-md-10 col-md-offset-1 text-xs-center">
                   <h1 className="mbr-section-title display-1">ATX-KICKS</h1>
                   <p className="mbr-section-lead lead">Austin's hub for sharing, discovering, and trading sneakers.&nbsp;</p>
-                  <div className="mbr-section-btn"><a className="btn btn-lg btn-primary" href="https://mobirise.com">LOGIN</a> <a className="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">BROWSE</a></div>
+                    <div className="mbr-section-btn">
+                      <Link to="/MyKicks">
+                        <a className="btn btn-lg btn-primary" href="/MyKicks" style={{marginRight:"1em"}}>UPLOAD</a>
+                      </Link>
+                      
+                      <Link to="/Marketplace">  
+                        <a className="btn btn-lg btn-white btn-white-outline" href="/Marketplace">BROWSE</a>
+                      </Link>
+                    </div>
                 </div>
               </div>
             </div>

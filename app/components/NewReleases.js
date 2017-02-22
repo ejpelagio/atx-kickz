@@ -24,9 +24,9 @@ var NewReleases = React.createClass ({
 
 render: function(){
   return (
-        <div>
+        <div className="bodyContainer">
             
-            <h1><b>New Releases</b></h1>
+            <h1 style={{"padding-left":"1rem"}}><b>New Releases</b></h1>
             <div className="container-fluid">
                   <div className="row">
                  

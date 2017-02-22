@@ -11,7 +11,9 @@ var options = [
     { value: '', label: 'All' },
     { value: 'Nike', label: 'Nike' },
     { value: 'Adidas', label: 'Adidas' },
-    { value: 'Bata', label: 'Bata' }
+    { value: 'Bata', label: 'Bata' },
+    { value: 'Puma', label: 'Puma' },
+    { value: 'Converse', label: 'Converse' }
 ];
 
 //function logChange(val) {
