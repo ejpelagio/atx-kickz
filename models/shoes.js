@@ -31,9 +31,9 @@ var shoesSchema = new Schema({
 
   sellingPrice: Number,
 
-  ZipCode : String,
+  zipCode : String,
 
-  comments: [{ body: String, date: Date }],
+  comments: String,
 
   date: { type: Date, default: Date.now },
 

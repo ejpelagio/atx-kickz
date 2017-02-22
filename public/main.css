@@ -14,8 +14,13 @@ body {
 */
 .card{
 	box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-	margin: 1rem;
+	margin: .6rem;
 
+
+}
+
+.bodyContainer{
+	padding-top: 8rem;
 }
 /*
 [class*="row"] {

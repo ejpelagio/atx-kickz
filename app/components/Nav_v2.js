@@ -13,12 +13,12 @@ var Nav = React.createClass({
     return (
     <div>  
     <section id="menu-0">
-          <nav className="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+          <nav className="navbar navbar-dropdown bg-color navbar-fixed-top">
             <div className="container">
               <div className="mbr-table">
                 <div className="mbr-table-cell">
                   <div className="navbar-brand">
-                    <a href="https://mobirise.com" className="navbar-logo"><img src="assets/images/shoe-iconv4-162x128.png" alt="Mobirise" /></a>
+                    <a href="https://atxkicks.heroku.com" className="navbar-logo"><img src="assets/images/shoe-iconv4-162x128.png" alt="Mobirise" /></a>
                      <Link to="/Home">
                     <a className="navbar-caption" href="/Home">ATX-KICKS</a>
                     </Link>
