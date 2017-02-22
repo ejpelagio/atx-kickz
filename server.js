@@ -5,6 +5,8 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var Promise = require("bluebird");
 mongoose.Promise = Promise;
+//var jwt = require('express-jwt');
+//var cors = require('cors');
 
 // Require History Schema
 // var History = require("./models/History");
@@ -14,6 +16,14 @@ var shoes = require("./models/shoes");
 
 // Create Instance of Express
 var app = express();
+//app.use(cors());
+
+//const authCheck = jwt({
+//  secret: new Buffer('Your_auth0_secret', 'base64'),
+//  audience: 'Your_auth0_clientID'
+//});
+
+
 // Sets an initial port. We'll use this later in our listener
 var PORT = process.env.PORT || 3000;
 

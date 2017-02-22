@@ -17,6 +17,11 @@ body {
 	margin: 1rem;
 
 }
+
+.bodyContainer{
+	padding-top: 8rem;
+
+}
 /*
 [class*="row"] {
 	margin-bottom: 1rem;

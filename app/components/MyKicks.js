@@ -1,14 +1,26 @@
 import React from 'react';
-
+var helpers = require("../utils/helpers");
+var FormsyTest = require("./children/FormsyTestv1.js");
 
 export default class MyKicks extends React.Component {
     render(){
-        return (
+		return (
+		      <div className="container bodyContainer">
+
+		        <div className="row">
 
 
-        	<h1>Hello from my kicks!</h1>
+		          <div className="col-md-6">
+		            <FormsyTest setShoeData={this.setShoeData}/>
+		          </div>
 
+		          <div className="col-md-6">
+		            
+		          </div>
 
-        	);
-    }
+		        </div>
+
+		      </div>
+		    );
+   }
 }

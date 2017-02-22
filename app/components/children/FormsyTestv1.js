@@ -53,7 +53,7 @@ var FormsyTest = React.createClass({
 
         return (
             <div>
-                <h1>Example</h1>
+                <h1>Submit/Update</h1>
                 <Form onSubmit={submitForm}>
                     <Input
                         label="Brand"

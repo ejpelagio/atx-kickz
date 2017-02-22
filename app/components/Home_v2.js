@@ -1,13 +1,18 @@
 import React from 'react';
 import Main from '../containers/Main'
 export default class Home extends React.Component {
+    showLock(){
+      console.log(this.props.test)
+    }
+
+
     render(){
         
 
         return (
         	<div>
         
-        <section className="engine"><a rel="external" href="https://mobirise.com">Web Page Creator</a></section><section className="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow" id="header1-1" style={{backgroundImage: 'url(assets/images/mbr-2000x1334.jpg)'}}>
+        <section className="engine"><a rel="external" href="https://atxkicks.heroku.com">ATX Kicks</a></section><section className="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow" id="header1-1" style={{backgroundImage: 'url(assets/images/mbr-2000x1334.jpg)'}}>
           <div className="mbr-overlay" style={{opacity: '0.3', backgroundColor: 'rgb(0, 0, 0)'}} />
           <div className="mbr-table-cell">
             <div className="container">
@@ -35,7 +40,7 @@ export default class Home extends React.Component {
               <div className="mbr-footer-content col-xs-12 col-md-3">
                 <p><strong>Contacts</strong><br />
                   Email: atx-kicks@gmail.com<br />
-                  Phone: +1 (0) 000 0000 001<br />
+                  Phone: +1 (0) {this.props.number}<br />
                   Fax: +1 (0) 000 0000 002</p>
               </div>
               <div className="mbr-footer-content col-xs-12 col-md-3">

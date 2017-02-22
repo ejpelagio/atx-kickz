@@ -44,7 +44,7 @@ var Marketplace = React.createClass ({
         return (
         <div>
           <h1><b>Market Place</b></h1>
-          <div className="container-fluid">
+          <div className="container-fluid bodyContainer">
             <div className="row">
               <div className="card-deck">
                 {this.state.allShoes.map(function(search, i) {
