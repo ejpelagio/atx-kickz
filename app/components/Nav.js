@@ -12,7 +12,7 @@ var Nav = React.createClass({
   render: function() {
     return (
     
-    <div className="container-fluid">
+    <div className="mainContainer">
       <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
            
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,11 @@ var Nav = React.createClass({
               </Link>
 
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul className="navbar-nav">
+              
+            <div className="flex-container"> 
+              <ul className="nav navbar-nav float-xs-right">
+                
+               
                 <li className="nav-item">
                   <Link to="/MyKicks">
                     <a className="nav-link" href="/MyKicks">My Kicks <span className="sr-only">(current)</span></a>
@@ -48,42 +52,44 @@ var Nav = React.createClass({
                     <a className="nav-link" href="/NewReleases">New Releases</a>
                   </Link>
                 </li>
+
+            
                 
-              </ul>
+                </ul>
+              </div>
             </div>
           </nav>
 
-      
-        	
+          <div className="content-container">
+            	
 
-          {/*
-              <Link to="/MyKicks">
-                  <li role="presentation"><a href="#"> My Kicks</a></li>
-              </Link>  
+              
+              
+             {this.props.children}
+          
+          </div>
 
-              <Link to="/Browse">
-                  <li role="presentation"><a href="#"> Browse</a></li>
-              </Link>
+   
+      {/*
+        <div id="logos" className="container-fluid">
+              
+              <small>Built with React</small>
+
                   
-              <Link to="/Marketplace">
-                  <li role="presentation"><a href="#"> Marketplace</a></li>
-              </Link>
+                       
+                    
+                  </div>  
+          */}
 
-              <Link to="/NewReleases"> 
-                  <li role="presentation"><a href="#"> New Releases</a></li>
-          	  </Link>
-
-            */}
-          
-          
       
 
-          
 
-        {this.props.children}
-      
-      
-    </div>      
+
+
+      </div>      
+
+    
+    
     );
   }
 });
