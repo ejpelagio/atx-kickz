@@ -66,7 +66,6 @@ app.get("/", function(req, res) {
   });
 });*/
 
-
 app.get("/models", function(req, res) {
 
   // We will find all the records, sort it in descending order, then limit the records to 5
@@ -86,17 +85,13 @@ app.get("/models", function(req, res) {
 app.get("/api/newReleases", function(req, res) {
 
   // We will find all the records, sort it in descending order, then limit the records to 5
-  newReleases.find({}).sort([
-    ["date", "descending"]
-  ]).limit(15).exec(function(err, doc) {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      console.log("Works");
-      res.send(doc);
-    }
-  });
+ newReleases.find({}).sort({releaseDate: +1}).exec(function(err, doc){
+  if(err){
+    console.log(err);
+  }
+  else
+    res.send(doc);
+});
 });
 
 
@@ -146,8 +141,11 @@ app.post("/models", function(req, res) {
     color: req.body.color,
     size: req.body.size,
     condition: req.body.condition,
-    imageURL: req.body.imageURL, 
-    cardImageURL: req.body.transformURL
+    imageURL: req.body.imageURL,
+    cardImageURL: req.body.transformURL,
+    comments: req.body.comments,
+    sellingPrice: req.body.sellingPrice, 
+    zipCode: req.body.zipCode
 
   })
   res.send("posted");
