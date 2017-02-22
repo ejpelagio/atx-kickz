@@ -14,6 +14,7 @@ import MyKicks from '../components/MyKicks'
 module.exports = (
     <Router history={browserHistory}>
         
+
         <Route path="/" component={NavV2} >
            
            <IndexRoute component={HomeV2} />

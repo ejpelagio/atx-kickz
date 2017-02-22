@@ -68,9 +68,7 @@ var Marketplace = React.createClass ({
 
 
       )
-
-
-}
+    }
 });
 
 module.exports=Marketplace;

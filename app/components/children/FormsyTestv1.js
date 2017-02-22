@@ -1,7 +1,7 @@
 // Include React
 import React, { Component } from 'react';
 import FRC from 'formsy-react-components';
-const { Form, Input, File, RadioGroup, Checkbox, CheckboxGroup, Select } = FRC;
+const { Form, Input, File, RadioGroup, Checkbox, CheckboxGroup, Select, Textarea } = FRC;
 
 var FormsyTest = React.createClass({
   // Here we describe this component's render method
@@ -53,7 +53,7 @@ var FormsyTest = React.createClass({
 
         return (
             <div>
-                <h1>Example</h1>
+                <h2>Upload your kicks</h2>
                 <Form onSubmit={submitForm}>
                     <Input
                         label="Brand"
@@ -81,8 +81,32 @@ var FormsyTest = React.createClass({
                         label="Shoe Size"
                         name="size"
                         options={multiOptions}
-                        
+                     />
+
+                     <Input
+                        label="Selling Price ($)"
+                        name="sellingPrice"
+                     
                     />
+
+                    <Input
+                        label="Zip Code"
+                        name="zipCode"
+                     
+                    />
+                    <fieldset>
+                        <legend>Description/Comments</legend>
+                        <Textarea
+                            rows={3}
+                            cols={20}
+                            name="comments"
+                            label="Comments"
+                            
+                        />
+                    </fieldset>
+
+
+
                     
                     <div className="container">
                     <button type="button" className="btn btn-default" onClick={this.handleUpload} style={{marginRight:"1em"}}>Upload</button> 

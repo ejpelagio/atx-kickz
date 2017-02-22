@@ -23,13 +23,19 @@ var shoesSchema = new Schema({
 
   condition: String,
 
-  imageURL: String, 
+  imageURL: String,
 
   cardImageURL: String,
 
-  forSale: Boolean, 
+  forSale: Boolean,
 
-  sellingPrice: Number, 
+  sellingPrice: Number,
+
+  zipCode : String,
+
+  comments: String,
+
+  date: { type: Date, default: Date.now },
 
   userID: String
 

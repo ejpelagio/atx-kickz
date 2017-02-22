@@ -1,4 +1,4 @@
-html {
+/*html {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -11,14 +11,18 @@ body {
     display: flex;
     justify-content:space-between;
 }
-
-img { width: 100%; }
-.container-fluid { max-width: 1200px; }
-
+*/
 .card{
 	box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+	margin: .6rem;
+
+
 }
 
+.bodyContainer{
+	padding-top: 8rem;
+}
+/*
 [class*="row"] {
 	margin-bottom: 1rem;
   justify-content: center;
@@ -31,3 +35,4 @@ img { width: 100%; }
 	padding-bottom: .75rem;
 	width: 100%;
 }
+*/
