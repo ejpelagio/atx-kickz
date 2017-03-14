@@ -12,8 +12,7 @@ Atx Kicks: a full stack MERN application that organizes and beautifully displays
  http://atxkicks.herokuapp.com/  
  
  
- 
- # Technologies 
+# Technologies 
  1. Mongodb
  2. Express.js
  3. React.js
